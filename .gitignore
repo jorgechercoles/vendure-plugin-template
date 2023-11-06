@@ -1,0 +1,10 @@
+.DS_Store
+.env
+.env.*
+*.log
+
+dist
+node_modules
+__admin-ui
+__data__
+__e2e__

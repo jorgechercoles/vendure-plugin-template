@@ -1,0 +1,74 @@
+{
+	"name": "vendure-plugin-template",
+	"version": "1.0.0",
+	"description": "A template for creating Vendure e-commerce plugins with pre-configured tools for development and testing.",
+	"license": "MIT",
+	"keywords": [
+		"vendure",
+		"vendure-plugin"
+	],
+	"author": {
+		"name": "Jorge Chércoles Moreno",
+		"email": "jchercoles.io@gmail.com",
+		"url": "https://github.com/jorgechercoles"
+	},
+	"repository": {
+		"url": "https://github.com/jorgechercoles/vendure-plugin-template.git",
+		"type": "github"
+	},
+	"private": true,
+	"engines": {
+		"node": ">=16.0.0"
+	},
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist",
+		"README.md"
+	],
+	"scripts": {
+		"dev:populate": "ts-node dev/populate.ts",
+		"dev:start": "ts-node dev/index.ts",
+		"dev:migration:generate": "ts-node dev/migration generate",
+		"dev:migration:run": "ts-node dev/migration run",
+		"dev:migration:revert": "ts-node dev/migration revert",
+		"build": "rimraf dist && tsc",
+		"test": "vitest run",
+		"format": "prettier --check .",
+		"format:fix": "prettier --write .",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"generate-types": "graphql-codegen",
+		"prepare": "husky install"
+	},
+	"dependencies": {
+		"@vendure/core": "2.1.2",
+		"dotenv": "^16.3.1"
+	},
+	"devDependencies": {
+		"@graphql-codegen/cli": "^5.0.0",
+		"@graphql-codegen/client-preset": "^4.1.0",
+		"@swc/core": "^1.3.95",
+		"@types/eslint": "^8.44.6",
+		"@types/node": "^20.8.10",
+		"@typescript-eslint/eslint-plugin": "^6.9.1",
+		"@typescript-eslint/parser": "^6.9.1",
+		"@vendure/admin-ui-plugin": "2.1.2",
+		"@vendure/asset-server-plugin": "2.1.2",
+		"@vendure/create": "2.1.2",
+		"@vendure/testing": "2.1.2",
+		"@vendure/ui-devkit": "2.1.2",
+		"better-sqlite3": "^9.0.0",
+		"commander": "^11.1.0",
+		"eslint": "^8.52.0",
+		"eslint-config-prettier": "^9.0.0",
+		"husky": "^8.0.0",
+		"prettier": "^3.0.3",
+		"prettier-plugin-organize-imports": "^3.2.3",
+		"rimraf": "^4.1.2",
+		"ts-node": "10.9.1",
+		"typescript": "^4.9.5",
+		"unplugin-swc": "^1.4.3",
+		"vitest": "^0.34.6"
+	}
+}

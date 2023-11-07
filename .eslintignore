@@ -2,6 +2,8 @@ test
 dev
 dist
 node_modules
+src/types
+src/ui/types
 
 vitest.config.js
 codegen.ts

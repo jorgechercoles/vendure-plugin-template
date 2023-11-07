@@ -2,6 +2,7 @@ test
 dev
 dist
 node_modules
+src/ui
 src/types
 src/ui/types
 

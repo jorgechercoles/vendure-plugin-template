@@ -1,10 +1,8 @@
-test
-dev
 dist
 node_modules
-src/ui
-src/types
-src/ui/types
+__admin-ui
+__data__
+__e2e__
+.husky
 
-vitest.config.js
-codegen.ts
+generated-types.ts

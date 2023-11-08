@@ -6,13 +6,16 @@ const config: CodegenConfig = {
 		scalars: { ID: 'string | number' },
 		maybeValue: 'T'
 	},
+	ignoreNoDocuments: true,
 	generates: {
-		'src/ui/types/': {
+		'src/ui/generated-types.ts': {
 			schema: 'http://localhost:3000/admin-api',
-			preset: 'client'
+			documents: 'src/ui/**/*.{gql,graphql}.ts',
+			plugins: ['typescript']
 		},
-		'src/types/admin-types.ts': {
+		'src/generated-types.ts': {
 			schema: 'http://localhost:3000/admin-api',
+			documents: ['src/**/*.{gql,graphql}.ts', '!src/ui/**/*'],
 			plugins: ['typescript']
 		}
 	}

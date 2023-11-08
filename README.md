@@ -1,10 +1,11 @@
 # Vendure E-Commerce Plugin Template
 
 ![Vendure Version - Badge](https://img.shields.io/badge/Vendure-v2.1.1-17c1ff)
+![Typescript - Badge](https://img.shields.io/badge/Typescript-v4.9.5-3178c6?logo=typescript)
 
-![Testing - Vitest - Badge](https://img.shields.io/badge/Testing-Vitest-7ec242?logo=vitest)
-![Linter - ESLint - Badge](https://img.shields.io/badge/Linter-ESLint-4b32c3?logo=eslint)
-![Formatter - Prettier - Badge](https://img.shields.io/badge/Formatter-Prettier-f8bc45?logo=prettier)
+![Vitest - Badge](https://img.shields.io/badge/Testing-Vitest-7ec242?logo=vitest)
+![ESLint - Badge](https://img.shields.io/badge/Linter-ESLint-4b32c3?logo=eslint)
+![Prettier - Badge](https://img.shields.io/badge/Formatter-Prettier-f8bc45?logo=prettier)
 
 This is a template repository for creating Vendure e-commerce plugins. It comes pre-configured with the following features:
 
@@ -138,11 +139,27 @@ yarn test
 We use [GraphQL Code Generator](https://the-guild.dev/graphql/codegen) to extract the graphql types from Vendure.<br>
 By default, we create types in two places:
 
--   `src/types/admin-types.ts`: admin-api types to use in your custom backend plugins.
--   `src/ui/types`: admin-api types to use in your custom ui plugins.<br>
-    Uses [`client` preset](https://the-guild.dev/graphql/codegen/plugins/presets/preset-client), so you can wrap the queries with the `graphql` function and take advantage of infered typing in your queries.
+-   `src/generated-types.ts`: admin-api types to use in your custom backend plugins.
+-   `src/ui/generated-types.ts`: admin-api types to use in your custom UI plugins.
 
-Feel free to modify GraphQL Code Generator configuration in `.graphqlrc.cjs`.
+If you want to extend the types, you can create files `*.graphql.ts` or `.gql.ts` where you define custom GraphQL types, queries, mutations wrapper by `graphql-tag`.
+
+```typescript
+import gql from 'graphql-tag';
+
+export const ExampleType = gql`
+	type Example implements Node {
+		id: ID!
+		createdAt: DateTime!
+		updatedAt: DateTime!
+		title: String!
+	}
+`;
+```
+
+**Note:** `.{gql,graphql}.ts` files inside `src/ui` are excluded from the `src/generated-types.ts` as well as files outside `src/ui` are excluded from the `src/ui/generated-types.ts`.
+
+Feel free to modify GraphQL Code Generator configuration in `codegen.ts`.
 
 You can run GraphQL Code Generator with the following command:
 

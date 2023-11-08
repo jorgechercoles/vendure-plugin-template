@@ -14,12 +14,14 @@ const config = {
 	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
-		project: ['./tsconfig.json'],
+		project: ['./tsconfig.eslint.json'],
 		ecmaVersion: 'latest',
 		sourceType: 'module'
 	},
-	plugins: ['@typescript-eslint'],
-	rules: {}
+	plugins: ['@typescript-eslint', 'simple-import-sort'],
+	rules: {
+		'simple-import-sort/imports': ['error']
+	}
 };
 
 module.exports = config;

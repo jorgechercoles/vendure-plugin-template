@@ -1,16 +1,15 @@
-import { createTestEnvironment, registerInitializer, SimpleGraphQLClient, SqljsInitializer, testConfig, TestServer } from '@vendure/testing';
 import 'dotenv/config';
-import path from 'path';
-import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 import { AssetServerPlugin } from '@vendure/asset-server-plugin';
 import { DefaultSearchPlugin, mergeConfig } from '@vendure/core';
+import { createTestEnvironment, registerInitializer, SqljsInitializer, testConfig, TestServer } from '@vendure/testing';
+import path from 'path';
+import { afterAll, beforeAll, describe, expect, it } from 'vitest';
+
 import { initialData } from './fixtures/initial-data';
 
 describe('Plugin', function () {
 	let server: TestServer;
-	let adminClient: SimpleGraphQLClient;
-	let shopClient: SimpleGraphQLClient;
 	let serverStarted: boolean;
 
 	beforeAll(async () => {
@@ -30,8 +29,6 @@ describe('Plugin', function () {
 			})
 		);
 		server = testEnvironment.server;
-		adminClient = testEnvironment.adminClient;
-		shopClient = testEnvironment.shopClient;
 
 		await server.init({
 			initialData,

@@ -1,5 +1,4 @@
 /** @type {import("prettier").Config} */
-// Issue with plugin load https://github.com/prettier/prettier/issues/15079 👈
 const config = {
 	trailingComma: 'none',
 	tabWidth: 4,
@@ -7,8 +6,7 @@ const config = {
 	semi: true,
 	singleQuote: true,
 	bracketSpacing: true,
-	printWidth: 150,
-	plugins: ['prettier-plugin-organize-imports']
+	printWidth: 150
 };
 
 module.exports = config;

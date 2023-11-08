@@ -16,6 +16,6 @@
 		"resolveJsonModule": true,
 		"outDir": "dist"
 	},
-	"exclude": ["src/ui", "src/types", "src/ui/types"],
-	"include": ["src", ".eslintrc.cjs"]
+	"exclude": ["src/ui", "generated-types.ts"],
+	"include": ["src"]
 }

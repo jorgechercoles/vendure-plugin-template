@@ -1,4 +1,9 @@
-src/types
-src/ui/types
+dist
+node_modules
+__admin-ui
+__data__
+__e2e__
+.husky
 
-package-lock.json
+generated-types.ts
+yarn.lock

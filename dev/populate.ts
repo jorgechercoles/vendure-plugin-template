@@ -1,6 +1,8 @@
 import { bootstrap } from '@vendure/core';
 import { populate } from '@vendure/core/cli';
+import initialData from '@vendure/create/assets/initial-data.json';
 import path from 'path';
+
 import { config } from './vendure-config';
 
 populate(
@@ -11,7 +13,7 @@ populate(
 				importAssetsDir: path.join(require.resolve('@vendure/create/assets/products.csv'), '../images')
 			}
 		}),
-	require('@vendure/create/assets/initial-data.json'),
+	initialData,
 	require.resolve('@vendure/create/assets/products.csv')
 )
 	.then((app) => app.close())

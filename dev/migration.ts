@@ -1,6 +1,7 @@
 import { generateMigration, revertLastMigration, runMigrations } from '@vendure/core';
 import { program } from 'commander';
 import path from 'path';
+
 import { config } from './vendure-config';
 
 program

@@ -1,7 +1,8 @@
+import 'dotenv/config';
+
 import { AdminUiPlugin } from '@vendure/admin-ui-plugin';
 import { AssetServerPlugin } from '@vendure/asset-server-plugin';
 import { DefaultSearchPlugin, dummyPaymentHandler, LanguageCode, VendureConfig } from '@vendure/core';
-import 'dotenv/config';
 import path from 'path';
 
 export const config: VendureConfig = {

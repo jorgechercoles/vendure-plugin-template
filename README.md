@@ -142,7 +142,7 @@ By default, we create types in two places:
 -   `src/generated-types.ts`: admin-api types to use in your custom backend plugins.
 -   `src/ui/generated-types.ts`: admin-api types to use in your custom UI plugins.
 
-If you want to extend the types, you can create files `*.graphql.ts` or `.gql.ts` where you define custom GraphQL types, queries, mutations wrapper by `graphql-tag`.
+If you want to extend the types, you can create files `*.graphql.ts` or `.gql.ts` where you define custom GraphQL types, queries, mutations wrapped by `graphql-tag`.
 
 ```typescript
 import gql from 'graphql-tag';
@@ -156,8 +156,6 @@ export const ExampleType = gql`
 	}
 `;
 ```
-
-**Note:** `.{gql,graphql}.ts` files inside `src/ui` are excluded from the `src/generated-types.ts` as well as files outside `src/ui` are excluded from the `src/ui/generated-types.ts`.
 
 Feel free to modify GraphQL Code Generator configuration in `codegen.ts`.
 

@@ -1,4 +1,5 @@
 {
 	"extends": "./tsconfig.json",
+	"exclude": ["generated-types.ts"],
 	"include": ["src", "dev", "test", "codegen.ts", ".eslintrc.cjs", "vitest.config.js"]
 }

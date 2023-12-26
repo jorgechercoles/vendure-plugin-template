@@ -11,11 +11,10 @@ const config: CodegenConfig = {
 		'src/ui/generated-types.ts': {
 			schema: 'http://localhost:3000/admin-api',
 			documents: 'src/ui/**/*.{gql,graphql}.ts',
-			plugins: ['typescript']
+			plugins: ['typescript', 'typescript-operations', 'typescript-document-nodes']
 		},
 		'src/generated-types.ts': {
 			schema: 'http://localhost:3000/admin-api',
-			documents: ['src/**/*.{gql,graphql}.ts', '!src/ui/**/*'],
 			plugins: ['typescript']
 		}
 	}

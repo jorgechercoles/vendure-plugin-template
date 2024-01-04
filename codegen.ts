@@ -4,7 +4,8 @@ const config: CodegenConfig = {
 	config: {
 		strict: true,
 		scalars: { ID: 'string | number' },
-		maybeValue: 'T'
+		maybeValue: 'T',
+		namingConvention: { enumValues: 'keep' }
 	},
 	ignoreNoDocuments: true,
 	generates: {

@@ -9,10 +9,11 @@ const config: CodegenConfig = {
 	},
 	ignoreNoDocuments: true,
 	generates: {
-		'src/ui/generated-types.ts': {
+		'src/ui/gql/': {
+			preset: 'client',
+			presetConfig: { fragmentMasking: false },
 			schema: 'http://localhost:3000/admin-api',
-			documents: 'src/ui/**/*.{gql,graphql}.ts',
-			plugins: ['typescript', 'typescript-operations', 'typescript-document-nodes']
+			documents: 'src/ui/**/*.{gql,graphql}.ts'
 		},
 		'src/generated-types.ts': {
 			schema: 'http://localhost:3000/admin-api',

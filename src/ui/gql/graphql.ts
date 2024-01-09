@@ -1,5 +1,6 @@
-export type Maybe<T> = T;
-export type InputMaybe<T> = T;
+/* eslint-disable */
+export type Maybe<T> = T | null;
+export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
@@ -12,9 +13,13 @@ export type Scalars = {
   Boolean: { input: boolean; output: boolean; }
   Int: { input: number; output: number; }
   Float: { input: number; output: number; }
+  /** A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar. */
   DateTime: { input: any; output: any; }
+  /** The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
   JSON: { input: any; output: any; }
+  /** The `Money` scalar type represents monetary values and supports signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point). */
   Money: { input: any; output: any; }
+  /** The `Upload` scalar type represents a file upload. */
   Upload: { input: any; output: any; }
 };
 
@@ -78,9 +83,9 @@ export type Adjustment = {
 };
 
 export enum AdjustmentType {
-  DistributedOrderPromotion = 'DISTRIBUTED_ORDER_PROMOTION',
-  Other = 'OTHER',
-  Promotion = 'PROMOTION'
+  DISTRIBUTED_ORDER_PROMOTION = 'DISTRIBUTED_ORDER_PROMOTION',
+  OTHER = 'OTHER',
+  PROMOTION = 'PROMOTION'
 }
 
 export type Administrator = Node & {
@@ -230,9 +235,9 @@ export type AssetSortParameter = {
 };
 
 export enum AssetType {
-  Binary = 'BINARY',
-  Image = 'IMAGE',
-  Video = 'VIDEO'
+  BINARY = 'BINARY',
+  IMAGE = 'IMAGE',
+  VIDEO = 'VIDEO'
 }
 
 export type AssignAssetsToChannelInput = {
@@ -948,319 +953,319 @@ export type CreateZoneInput = {
  */
 export enum CurrencyCode {
   /** United Arab Emirates dirham */
-  Aed = 'AED',
+  AED = 'AED',
   /** Afghan afghani */
-  Afn = 'AFN',
+  AFN = 'AFN',
   /** Albanian lek */
-  All = 'ALL',
+  ALL = 'ALL',
   /** Armenian dram */
-  Amd = 'AMD',
+  AMD = 'AMD',
   /** Netherlands Antillean guilder */
-  Ang = 'ANG',
+  ANG = 'ANG',
   /** Angolan kwanza */
-  Aoa = 'AOA',
+  AOA = 'AOA',
   /** Argentine peso */
-  Ars = 'ARS',
+  ARS = 'ARS',
   /** Australian dollar */
-  Aud = 'AUD',
+  AUD = 'AUD',
   /** Aruban florin */
-  Awg = 'AWG',
+  AWG = 'AWG',
   /** Azerbaijani manat */
-  Azn = 'AZN',
+  AZN = 'AZN',
   /** Bosnia and Herzegovina convertible mark */
-  Bam = 'BAM',
+  BAM = 'BAM',
   /** Barbados dollar */
-  Bbd = 'BBD',
+  BBD = 'BBD',
   /** Bangladeshi taka */
-  Bdt = 'BDT',
+  BDT = 'BDT',
   /** Bulgarian lev */
-  Bgn = 'BGN',
+  BGN = 'BGN',
   /** Bahraini dinar */
-  Bhd = 'BHD',
+  BHD = 'BHD',
   /** Burundian franc */
-  Bif = 'BIF',
+  BIF = 'BIF',
   /** Bermudian dollar */
-  Bmd = 'BMD',
+  BMD = 'BMD',
   /** Brunei dollar */
-  Bnd = 'BND',
+  BND = 'BND',
   /** Boliviano */
-  Bob = 'BOB',
+  BOB = 'BOB',
   /** Brazilian real */
-  Brl = 'BRL',
+  BRL = 'BRL',
   /** Bahamian dollar */
-  Bsd = 'BSD',
+  BSD = 'BSD',
   /** Bhutanese ngultrum */
-  Btn = 'BTN',
+  BTN = 'BTN',
   /** Botswana pula */
-  Bwp = 'BWP',
+  BWP = 'BWP',
   /** Belarusian ruble */
-  Byn = 'BYN',
+  BYN = 'BYN',
   /** Belize dollar */
-  Bzd = 'BZD',
+  BZD = 'BZD',
   /** Canadian dollar */
-  Cad = 'CAD',
+  CAD = 'CAD',
   /** Congolese franc */
-  Cdf = 'CDF',
+  CDF = 'CDF',
   /** Swiss franc */
-  Chf = 'CHF',
+  CHF = 'CHF',
   /** Chilean peso */
-  Clp = 'CLP',
+  CLP = 'CLP',
   /** Renminbi (Chinese) yuan */
-  Cny = 'CNY',
+  CNY = 'CNY',
   /** Colombian peso */
-  Cop = 'COP',
+  COP = 'COP',
   /** Costa Rican colon */
-  Crc = 'CRC',
+  CRC = 'CRC',
   /** Cuban convertible peso */
-  Cuc = 'CUC',
+  CUC = 'CUC',
   /** Cuban peso */
-  Cup = 'CUP',
+  CUP = 'CUP',
   /** Cape Verde escudo */
-  Cve = 'CVE',
+  CVE = 'CVE',
   /** Czech koruna */
-  Czk = 'CZK',
+  CZK = 'CZK',
   /** Djiboutian franc */
-  Djf = 'DJF',
+  DJF = 'DJF',
   /** Danish krone */
-  Dkk = 'DKK',
+  DKK = 'DKK',
   /** Dominican peso */
-  Dop = 'DOP',
+  DOP = 'DOP',
   /** Algerian dinar */
-  Dzd = 'DZD',
+  DZD = 'DZD',
   /** Egyptian pound */
-  Egp = 'EGP',
+  EGP = 'EGP',
   /** Eritrean nakfa */
-  Ern = 'ERN',
+  ERN = 'ERN',
   /** Ethiopian birr */
-  Etb = 'ETB',
+  ETB = 'ETB',
   /** Euro */
-  Eur = 'EUR',
+  EUR = 'EUR',
   /** Fiji dollar */
-  Fjd = 'FJD',
+  FJD = 'FJD',
   /** Falkland Islands pound */
-  Fkp = 'FKP',
+  FKP = 'FKP',
   /** Pound sterling */
-  Gbp = 'GBP',
+  GBP = 'GBP',
   /** Georgian lari */
-  Gel = 'GEL',
+  GEL = 'GEL',
   /** Ghanaian cedi */
-  Ghs = 'GHS',
+  GHS = 'GHS',
   /** Gibraltar pound */
-  Gip = 'GIP',
+  GIP = 'GIP',
   /** Gambian dalasi */
-  Gmd = 'GMD',
+  GMD = 'GMD',
   /** Guinean franc */
-  Gnf = 'GNF',
+  GNF = 'GNF',
   /** Guatemalan quetzal */
-  Gtq = 'GTQ',
+  GTQ = 'GTQ',
   /** Guyanese dollar */
-  Gyd = 'GYD',
+  GYD = 'GYD',
   /** Hong Kong dollar */
-  Hkd = 'HKD',
+  HKD = 'HKD',
   /** Honduran lempira */
-  Hnl = 'HNL',
+  HNL = 'HNL',
   /** Croatian kuna */
-  Hrk = 'HRK',
+  HRK = 'HRK',
   /** Haitian gourde */
-  Htg = 'HTG',
+  HTG = 'HTG',
   /** Hungarian forint */
-  Huf = 'HUF',
+  HUF = 'HUF',
   /** Indonesian rupiah */
-  Idr = 'IDR',
+  IDR = 'IDR',
   /** Israeli new shekel */
-  Ils = 'ILS',
+  ILS = 'ILS',
   /** Indian rupee */
-  Inr = 'INR',
+  INR = 'INR',
   /** Iraqi dinar */
-  Iqd = 'IQD',
+  IQD = 'IQD',
   /** Iranian rial */
-  Irr = 'IRR',
+  IRR = 'IRR',
   /** Icelandic króna */
-  Isk = 'ISK',
+  ISK = 'ISK',
   /** Jamaican dollar */
-  Jmd = 'JMD',
+  JMD = 'JMD',
   /** Jordanian dinar */
-  Jod = 'JOD',
+  JOD = 'JOD',
   /** Japanese yen */
-  Jpy = 'JPY',
+  JPY = 'JPY',
   /** Kenyan shilling */
-  Kes = 'KES',
+  KES = 'KES',
   /** Kyrgyzstani som */
-  Kgs = 'KGS',
+  KGS = 'KGS',
   /** Cambodian riel */
-  Khr = 'KHR',
+  KHR = 'KHR',
   /** Comoro franc */
-  Kmf = 'KMF',
+  KMF = 'KMF',
   /** North Korean won */
-  Kpw = 'KPW',
+  KPW = 'KPW',
   /** South Korean won */
-  Krw = 'KRW',
+  KRW = 'KRW',
   /** Kuwaiti dinar */
-  Kwd = 'KWD',
+  KWD = 'KWD',
   /** Cayman Islands dollar */
-  Kyd = 'KYD',
+  KYD = 'KYD',
   /** Kazakhstani tenge */
-  Kzt = 'KZT',
+  KZT = 'KZT',
   /** Lao kip */
-  Lak = 'LAK',
+  LAK = 'LAK',
   /** Lebanese pound */
-  Lbp = 'LBP',
+  LBP = 'LBP',
   /** Sri Lankan rupee */
-  Lkr = 'LKR',
+  LKR = 'LKR',
   /** Liberian dollar */
-  Lrd = 'LRD',
+  LRD = 'LRD',
   /** Lesotho loti */
-  Lsl = 'LSL',
+  LSL = 'LSL',
   /** Libyan dinar */
-  Lyd = 'LYD',
+  LYD = 'LYD',
   /** Moroccan dirham */
-  Mad = 'MAD',
+  MAD = 'MAD',
   /** Moldovan leu */
-  Mdl = 'MDL',
+  MDL = 'MDL',
   /** Malagasy ariary */
-  Mga = 'MGA',
+  MGA = 'MGA',
   /** Macedonian denar */
-  Mkd = 'MKD',
+  MKD = 'MKD',
   /** Myanmar kyat */
-  Mmk = 'MMK',
+  MMK = 'MMK',
   /** Mongolian tögrög */
-  Mnt = 'MNT',
+  MNT = 'MNT',
   /** Macanese pataca */
-  Mop = 'MOP',
+  MOP = 'MOP',
   /** Mauritanian ouguiya */
-  Mru = 'MRU',
+  MRU = 'MRU',
   /** Mauritian rupee */
-  Mur = 'MUR',
+  MUR = 'MUR',
   /** Maldivian rufiyaa */
-  Mvr = 'MVR',
+  MVR = 'MVR',
   /** Malawian kwacha */
-  Mwk = 'MWK',
+  MWK = 'MWK',
   /** Mexican peso */
-  Mxn = 'MXN',
+  MXN = 'MXN',
   /** Malaysian ringgit */
-  Myr = 'MYR',
+  MYR = 'MYR',
   /** Mozambican metical */
-  Mzn = 'MZN',
+  MZN = 'MZN',
   /** Namibian dollar */
-  Nad = 'NAD',
+  NAD = 'NAD',
   /** Nigerian naira */
-  Ngn = 'NGN',
+  NGN = 'NGN',
   /** Nicaraguan córdoba */
-  Nio = 'NIO',
+  NIO = 'NIO',
   /** Norwegian krone */
-  Nok = 'NOK',
+  NOK = 'NOK',
   /** Nepalese rupee */
-  Npr = 'NPR',
+  NPR = 'NPR',
   /** New Zealand dollar */
-  Nzd = 'NZD',
+  NZD = 'NZD',
   /** Omani rial */
-  Omr = 'OMR',
+  OMR = 'OMR',
   /** Panamanian balboa */
-  Pab = 'PAB',
+  PAB = 'PAB',
   /** Peruvian sol */
-  Pen = 'PEN',
+  PEN = 'PEN',
   /** Papua New Guinean kina */
-  Pgk = 'PGK',
+  PGK = 'PGK',
   /** Philippine peso */
-  Php = 'PHP',
+  PHP = 'PHP',
   /** Pakistani rupee */
-  Pkr = 'PKR',
+  PKR = 'PKR',
   /** Polish złoty */
-  Pln = 'PLN',
+  PLN = 'PLN',
   /** Paraguayan guaraní */
-  Pyg = 'PYG',
+  PYG = 'PYG',
   /** Qatari riyal */
-  Qar = 'QAR',
+  QAR = 'QAR',
   /** Romanian leu */
-  Ron = 'RON',
+  RON = 'RON',
   /** Serbian dinar */
-  Rsd = 'RSD',
+  RSD = 'RSD',
   /** Russian ruble */
-  Rub = 'RUB',
+  RUB = 'RUB',
   /** Rwandan franc */
-  Rwf = 'RWF',
+  RWF = 'RWF',
   /** Saudi riyal */
-  Sar = 'SAR',
+  SAR = 'SAR',
   /** Solomon Islands dollar */
-  Sbd = 'SBD',
+  SBD = 'SBD',
   /** Seychelles rupee */
-  Scr = 'SCR',
+  SCR = 'SCR',
   /** Sudanese pound */
-  Sdg = 'SDG',
+  SDG = 'SDG',
   /** Swedish krona/kronor */
-  Sek = 'SEK',
+  SEK = 'SEK',
   /** Singapore dollar */
-  Sgd = 'SGD',
+  SGD = 'SGD',
   /** Saint Helena pound */
-  Shp = 'SHP',
+  SHP = 'SHP',
   /** Sierra Leonean leone */
-  Sll = 'SLL',
+  SLL = 'SLL',
   /** Somali shilling */
-  Sos = 'SOS',
+  SOS = 'SOS',
   /** Surinamese dollar */
-  Srd = 'SRD',
+  SRD = 'SRD',
   /** South Sudanese pound */
-  Ssp = 'SSP',
+  SSP = 'SSP',
   /** São Tomé and Príncipe dobra */
-  Stn = 'STN',
+  STN = 'STN',
   /** Salvadoran colón */
-  Svc = 'SVC',
+  SVC = 'SVC',
   /** Syrian pound */
-  Syp = 'SYP',
+  SYP = 'SYP',
   /** Swazi lilangeni */
-  Szl = 'SZL',
+  SZL = 'SZL',
   /** Thai baht */
-  Thb = 'THB',
+  THB = 'THB',
   /** Tajikistani somoni */
-  Tjs = 'TJS',
+  TJS = 'TJS',
   /** Turkmenistan manat */
-  Tmt = 'TMT',
+  TMT = 'TMT',
   /** Tunisian dinar */
-  Tnd = 'TND',
+  TND = 'TND',
   /** Tongan paʻanga */
-  Top = 'TOP',
+  TOP = 'TOP',
   /** Turkish lira */
-  Try = 'TRY',
+  TRY = 'TRY',
   /** Trinidad and Tobago dollar */
-  Ttd = 'TTD',
+  TTD = 'TTD',
   /** New Taiwan dollar */
-  Twd = 'TWD',
+  TWD = 'TWD',
   /** Tanzanian shilling */
-  Tzs = 'TZS',
+  TZS = 'TZS',
   /** Ukrainian hryvnia */
-  Uah = 'UAH',
+  UAH = 'UAH',
   /** Ugandan shilling */
-  Ugx = 'UGX',
+  UGX = 'UGX',
   /** United States dollar */
-  Usd = 'USD',
+  USD = 'USD',
   /** Uruguayan peso */
-  Uyu = 'UYU',
+  UYU = 'UYU',
   /** Uzbekistan som */
-  Uzs = 'UZS',
+  UZS = 'UZS',
   /** Venezuelan bolívar soberano */
-  Ves = 'VES',
+  VES = 'VES',
   /** Vietnamese đồng */
-  Vnd = 'VND',
+  VND = 'VND',
   /** Vanuatu vatu */
-  Vuv = 'VUV',
+  VUV = 'VUV',
   /** Samoan tala */
-  Wst = 'WST',
+  WST = 'WST',
   /** CFA franc BEAC */
-  Xaf = 'XAF',
+  XAF = 'XAF',
   /** East Caribbean dollar */
-  Xcd = 'XCD',
+  XCD = 'XCD',
   /** CFA franc BCEAO */
-  Xof = 'XOF',
+  XOF = 'XOF',
   /** CFP franc (franc Pacifique) */
-  Xpf = 'XPF',
+  XPF = 'XPF',
   /** Yemeni rial */
-  Yer = 'YER',
+  YER = 'YER',
   /** South African rand */
-  Zar = 'ZAR',
+  ZAR = 'ZAR',
   /** Zambian kwacha */
-  Zmw = 'ZMW',
+  ZMW = 'ZMW',
   /** Zimbabwean dollar */
-  Zwl = 'ZWL'
+  ZWL = 'ZWL'
 }
 
 export type CurrentUser = {
@@ -1505,9 +1510,9 @@ export type DeletionResponse = {
 
 export enum DeletionResult {
   /** The entity was successfully deleted */
-  Deleted = 'DELETED',
+  DELETED = 'DELETED',
   /** Deletion did not take place, reason given in message */
-  NotDeleted = 'NOT_DELETED'
+  NOT_DELETED = 'NOT_DELETED'
 }
 
 export type Discount = {
@@ -1534,49 +1539,49 @@ export type EmptyOrderLineSelectionError = ErrorResult & {
 };
 
 export enum ErrorCode {
-  AlreadyRefundedError = 'ALREADY_REFUNDED_ERROR',
-  CancelActiveOrderError = 'CANCEL_ACTIVE_ORDER_ERROR',
-  CancelPaymentError = 'CANCEL_PAYMENT_ERROR',
-  ChannelDefaultLanguageError = 'CHANNEL_DEFAULT_LANGUAGE_ERROR',
-  CouponCodeExpiredError = 'COUPON_CODE_EXPIRED_ERROR',
-  CouponCodeInvalidError = 'COUPON_CODE_INVALID_ERROR',
-  CouponCodeLimitError = 'COUPON_CODE_LIMIT_ERROR',
-  CreateFulfillmentError = 'CREATE_FULFILLMENT_ERROR',
-  EmailAddressConflictError = 'EMAIL_ADDRESS_CONFLICT_ERROR',
-  EmptyOrderLineSelectionError = 'EMPTY_ORDER_LINE_SELECTION_ERROR',
-  FacetInUseError = 'FACET_IN_USE_ERROR',
-  FulfillmentStateTransitionError = 'FULFILLMENT_STATE_TRANSITION_ERROR',
-  GuestCheckoutError = 'GUEST_CHECKOUT_ERROR',
-  IneligibleShippingMethodError = 'INELIGIBLE_SHIPPING_METHOD_ERROR',
-  InsufficientStockError = 'INSUFFICIENT_STOCK_ERROR',
-  InsufficientStockOnHandError = 'INSUFFICIENT_STOCK_ON_HAND_ERROR',
-  InvalidCredentialsError = 'INVALID_CREDENTIALS_ERROR',
-  InvalidFulfillmentHandlerError = 'INVALID_FULFILLMENT_HANDLER_ERROR',
-  ItemsAlreadyFulfilledError = 'ITEMS_ALREADY_FULFILLED_ERROR',
-  LanguageNotAvailableError = 'LANGUAGE_NOT_AVAILABLE_ERROR',
-  ManualPaymentStateError = 'MANUAL_PAYMENT_STATE_ERROR',
-  MimeTypeError = 'MIME_TYPE_ERROR',
-  MissingConditionsError = 'MISSING_CONDITIONS_ERROR',
-  MultipleOrderError = 'MULTIPLE_ORDER_ERROR',
-  NativeAuthStrategyError = 'NATIVE_AUTH_STRATEGY_ERROR',
-  NegativeQuantityError = 'NEGATIVE_QUANTITY_ERROR',
-  NothingToRefundError = 'NOTHING_TO_REFUND_ERROR',
-  NoActiveOrderError = 'NO_ACTIVE_ORDER_ERROR',
-  NoChangesSpecifiedError = 'NO_CHANGES_SPECIFIED_ERROR',
-  OrderLimitError = 'ORDER_LIMIT_ERROR',
-  OrderModificationError = 'ORDER_MODIFICATION_ERROR',
-  OrderModificationStateError = 'ORDER_MODIFICATION_STATE_ERROR',
-  OrderStateTransitionError = 'ORDER_STATE_TRANSITION_ERROR',
-  PaymentMethodMissingError = 'PAYMENT_METHOD_MISSING_ERROR',
-  PaymentOrderMismatchError = 'PAYMENT_ORDER_MISMATCH_ERROR',
-  PaymentStateTransitionError = 'PAYMENT_STATE_TRANSITION_ERROR',
-  ProductOptionInUseError = 'PRODUCT_OPTION_IN_USE_ERROR',
-  QuantityTooGreatError = 'QUANTITY_TOO_GREAT_ERROR',
-  RefundOrderStateError = 'REFUND_ORDER_STATE_ERROR',
-  RefundPaymentIdMissingError = 'REFUND_PAYMENT_ID_MISSING_ERROR',
-  RefundStateTransitionError = 'REFUND_STATE_TRANSITION_ERROR',
-  SettlePaymentError = 'SETTLE_PAYMENT_ERROR',
-  UnknownError = 'UNKNOWN_ERROR'
+  ALREADY_REFUNDED_ERROR = 'ALREADY_REFUNDED_ERROR',
+  CANCEL_ACTIVE_ORDER_ERROR = 'CANCEL_ACTIVE_ORDER_ERROR',
+  CANCEL_PAYMENT_ERROR = 'CANCEL_PAYMENT_ERROR',
+  CHANNEL_DEFAULT_LANGUAGE_ERROR = 'CHANNEL_DEFAULT_LANGUAGE_ERROR',
+  COUPON_CODE_EXPIRED_ERROR = 'COUPON_CODE_EXPIRED_ERROR',
+  COUPON_CODE_INVALID_ERROR = 'COUPON_CODE_INVALID_ERROR',
+  COUPON_CODE_LIMIT_ERROR = 'COUPON_CODE_LIMIT_ERROR',
+  CREATE_FULFILLMENT_ERROR = 'CREATE_FULFILLMENT_ERROR',
+  EMAIL_ADDRESS_CONFLICT_ERROR = 'EMAIL_ADDRESS_CONFLICT_ERROR',
+  EMPTY_ORDER_LINE_SELECTION_ERROR = 'EMPTY_ORDER_LINE_SELECTION_ERROR',
+  FACET_IN_USE_ERROR = 'FACET_IN_USE_ERROR',
+  FULFILLMENT_STATE_TRANSITION_ERROR = 'FULFILLMENT_STATE_TRANSITION_ERROR',
+  GUEST_CHECKOUT_ERROR = 'GUEST_CHECKOUT_ERROR',
+  INELIGIBLE_SHIPPING_METHOD_ERROR = 'INELIGIBLE_SHIPPING_METHOD_ERROR',
+  INSUFFICIENT_STOCK_ERROR = 'INSUFFICIENT_STOCK_ERROR',
+  INSUFFICIENT_STOCK_ON_HAND_ERROR = 'INSUFFICIENT_STOCK_ON_HAND_ERROR',
+  INVALID_CREDENTIALS_ERROR = 'INVALID_CREDENTIALS_ERROR',
+  INVALID_FULFILLMENT_HANDLER_ERROR = 'INVALID_FULFILLMENT_HANDLER_ERROR',
+  ITEMS_ALREADY_FULFILLED_ERROR = 'ITEMS_ALREADY_FULFILLED_ERROR',
+  LANGUAGE_NOT_AVAILABLE_ERROR = 'LANGUAGE_NOT_AVAILABLE_ERROR',
+  MANUAL_PAYMENT_STATE_ERROR = 'MANUAL_PAYMENT_STATE_ERROR',
+  MIME_TYPE_ERROR = 'MIME_TYPE_ERROR',
+  MISSING_CONDITIONS_ERROR = 'MISSING_CONDITIONS_ERROR',
+  MULTIPLE_ORDER_ERROR = 'MULTIPLE_ORDER_ERROR',
+  NATIVE_AUTH_STRATEGY_ERROR = 'NATIVE_AUTH_STRATEGY_ERROR',
+  NEGATIVE_QUANTITY_ERROR = 'NEGATIVE_QUANTITY_ERROR',
+  NOTHING_TO_REFUND_ERROR = 'NOTHING_TO_REFUND_ERROR',
+  NO_ACTIVE_ORDER_ERROR = 'NO_ACTIVE_ORDER_ERROR',
+  NO_CHANGES_SPECIFIED_ERROR = 'NO_CHANGES_SPECIFIED_ERROR',
+  ORDER_LIMIT_ERROR = 'ORDER_LIMIT_ERROR',
+  ORDER_MODIFICATION_ERROR = 'ORDER_MODIFICATION_ERROR',
+  ORDER_MODIFICATION_STATE_ERROR = 'ORDER_MODIFICATION_STATE_ERROR',
+  ORDER_STATE_TRANSITION_ERROR = 'ORDER_STATE_TRANSITION_ERROR',
+  PAYMENT_METHOD_MISSING_ERROR = 'PAYMENT_METHOD_MISSING_ERROR',
+  PAYMENT_ORDER_MISMATCH_ERROR = 'PAYMENT_ORDER_MISMATCH_ERROR',
+  PAYMENT_STATE_TRANSITION_ERROR = 'PAYMENT_STATE_TRANSITION_ERROR',
+  PRODUCT_OPTION_IN_USE_ERROR = 'PRODUCT_OPTION_IN_USE_ERROR',
+  QUANTITY_TOO_GREAT_ERROR = 'QUANTITY_TOO_GREAT_ERROR',
+  REFUND_ORDER_STATE_ERROR = 'REFUND_ORDER_STATE_ERROR',
+  REFUND_PAYMENT_ID_MISSING_ERROR = 'REFUND_PAYMENT_ID_MISSING_ERROR',
+  REFUND_STATE_TRANSITION_ERROR = 'REFUND_STATE_TRANSITION_ERROR',
+  SETTLE_PAYMENT_ERROR = 'SETTLE_PAYMENT_ERROR',
+  UNKNOWN_ERROR = 'UNKNOWN_ERROR'
 }
 
 export type ErrorResult = {
@@ -1814,9 +1819,9 @@ export type FulfillmentStateTransitionError = ErrorResult & {
 };
 
 export enum GlobalFlag {
-  False = 'FALSE',
-  Inherit = 'INHERIT',
-  True = 'TRUE'
+  FALSE = 'FALSE',
+  INHERIT = 'INHERIT',
+  TRUE = 'TRUE'
 }
 
 export type GlobalSettings = {
@@ -1884,30 +1889,30 @@ export type HistoryEntrySortParameter = {
 };
 
 export enum HistoryEntryType {
-  CustomerAddedToGroup = 'CUSTOMER_ADDED_TO_GROUP',
-  CustomerAddressCreated = 'CUSTOMER_ADDRESS_CREATED',
-  CustomerAddressDeleted = 'CUSTOMER_ADDRESS_DELETED',
-  CustomerAddressUpdated = 'CUSTOMER_ADDRESS_UPDATED',
-  CustomerDetailUpdated = 'CUSTOMER_DETAIL_UPDATED',
-  CustomerEmailUpdateRequested = 'CUSTOMER_EMAIL_UPDATE_REQUESTED',
-  CustomerEmailUpdateVerified = 'CUSTOMER_EMAIL_UPDATE_VERIFIED',
-  CustomerNote = 'CUSTOMER_NOTE',
-  CustomerPasswordResetRequested = 'CUSTOMER_PASSWORD_RESET_REQUESTED',
-  CustomerPasswordResetVerified = 'CUSTOMER_PASSWORD_RESET_VERIFIED',
-  CustomerPasswordUpdated = 'CUSTOMER_PASSWORD_UPDATED',
-  CustomerRegistered = 'CUSTOMER_REGISTERED',
-  CustomerRemovedFromGroup = 'CUSTOMER_REMOVED_FROM_GROUP',
-  CustomerVerified = 'CUSTOMER_VERIFIED',
-  OrderCancellation = 'ORDER_CANCELLATION',
-  OrderCouponApplied = 'ORDER_COUPON_APPLIED',
-  OrderCouponRemoved = 'ORDER_COUPON_REMOVED',
-  OrderFulfillment = 'ORDER_FULFILLMENT',
-  OrderFulfillmentTransition = 'ORDER_FULFILLMENT_TRANSITION',
-  OrderModified = 'ORDER_MODIFIED',
-  OrderNote = 'ORDER_NOTE',
-  OrderPaymentTransition = 'ORDER_PAYMENT_TRANSITION',
-  OrderRefundTransition = 'ORDER_REFUND_TRANSITION',
-  OrderStateTransition = 'ORDER_STATE_TRANSITION'
+  CUSTOMER_ADDED_TO_GROUP = 'CUSTOMER_ADDED_TO_GROUP',
+  CUSTOMER_ADDRESS_CREATED = 'CUSTOMER_ADDRESS_CREATED',
+  CUSTOMER_ADDRESS_DELETED = 'CUSTOMER_ADDRESS_DELETED',
+  CUSTOMER_ADDRESS_UPDATED = 'CUSTOMER_ADDRESS_UPDATED',
+  CUSTOMER_DETAIL_UPDATED = 'CUSTOMER_DETAIL_UPDATED',
+  CUSTOMER_EMAIL_UPDATE_REQUESTED = 'CUSTOMER_EMAIL_UPDATE_REQUESTED',
+  CUSTOMER_EMAIL_UPDATE_VERIFIED = 'CUSTOMER_EMAIL_UPDATE_VERIFIED',
+  CUSTOMER_NOTE = 'CUSTOMER_NOTE',
+  CUSTOMER_PASSWORD_RESET_REQUESTED = 'CUSTOMER_PASSWORD_RESET_REQUESTED',
+  CUSTOMER_PASSWORD_RESET_VERIFIED = 'CUSTOMER_PASSWORD_RESET_VERIFIED',
+  CUSTOMER_PASSWORD_UPDATED = 'CUSTOMER_PASSWORD_UPDATED',
+  CUSTOMER_REGISTERED = 'CUSTOMER_REGISTERED',
+  CUSTOMER_REMOVED_FROM_GROUP = 'CUSTOMER_REMOVED_FROM_GROUP',
+  CUSTOMER_VERIFIED = 'CUSTOMER_VERIFIED',
+  ORDER_CANCELLATION = 'ORDER_CANCELLATION',
+  ORDER_COUPON_APPLIED = 'ORDER_COUPON_APPLIED',
+  ORDER_COUPON_REMOVED = 'ORDER_COUPON_REMOVED',
+  ORDER_FULFILLMENT = 'ORDER_FULFILLMENT',
+  ORDER_FULFILLMENT_TRANSITION = 'ORDER_FULFILLMENT_TRANSITION',
+  ORDER_MODIFIED = 'ORDER_MODIFIED',
+  ORDER_NOTE = 'ORDER_NOTE',
+  ORDER_PAYMENT_TRANSITION = 'ORDER_PAYMENT_TRANSITION',
+  ORDER_REFUND_TRANSITION = 'ORDER_REFUND_TRANSITION',
+  ORDER_STATE_TRANSITION = 'ORDER_STATE_TRANSITION'
 }
 
 /** Operators for filtering on a list of ID fields */
@@ -2080,12 +2085,12 @@ export type JobSortParameter = {
  * @docsCategory common
  */
 export enum JobState {
-  Cancelled = 'CANCELLED',
-  Completed = 'COMPLETED',
-  Failed = 'FAILED',
-  Pending = 'PENDING',
-  Retrying = 'RETRYING',
-  Running = 'RUNNING'
+  CANCELLED = 'CANCELLED',
+  COMPLETED = 'COMPLETED',
+  FAILED = 'FAILED',
+  PENDING = 'PENDING',
+  RETRYING = 'RETRYING',
+  RUNNING = 'RUNNING'
 }
 
 /**
@@ -2099,319 +2104,319 @@ export enum JobState {
  */
 export enum LanguageCode {
   /** Afrikaans */
-  Af = 'af',
+  af = 'af',
   /** Akan */
-  Ak = 'ak',
+  ak = 'ak',
   /** Amharic */
-  Am = 'am',
+  am = 'am',
   /** Arabic */
-  Ar = 'ar',
+  ar = 'ar',
   /** Assamese */
-  As = 'as',
+  as = 'as',
   /** Azerbaijani */
-  Az = 'az',
+  az = 'az',
   /** Belarusian */
-  Be = 'be',
+  be = 'be',
   /** Bulgarian */
-  Bg = 'bg',
+  bg = 'bg',
   /** Bambara */
-  Bm = 'bm',
+  bm = 'bm',
   /** Bangla */
-  Bn = 'bn',
+  bn = 'bn',
   /** Tibetan */
-  Bo = 'bo',
+  bo = 'bo',
   /** Breton */
-  Br = 'br',
+  br = 'br',
   /** Bosnian */
-  Bs = 'bs',
+  bs = 'bs',
   /** Catalan */
-  Ca = 'ca',
+  ca = 'ca',
   /** Chechen */
-  Ce = 'ce',
+  ce = 'ce',
   /** Corsican */
-  Co = 'co',
+  co = 'co',
   /** Czech */
-  Cs = 'cs',
+  cs = 'cs',
   /** Church Slavic */
-  Cu = 'cu',
+  cu = 'cu',
   /** Welsh */
-  Cy = 'cy',
+  cy = 'cy',
   /** Danish */
-  Da = 'da',
+  da = 'da',
   /** German */
-  De = 'de',
+  de = 'de',
   /** Austrian German */
-  DeAt = 'de_AT',
+  de_AT = 'de_AT',
   /** Swiss High German */
-  DeCh = 'de_CH',
+  de_CH = 'de_CH',
   /** Dzongkha */
-  Dz = 'dz',
+  dz = 'dz',
   /** Ewe */
-  Ee = 'ee',
+  ee = 'ee',
   /** Greek */
-  El = 'el',
+  el = 'el',
   /** English */
-  En = 'en',
+  en = 'en',
   /** Australian English */
-  EnAu = 'en_AU',
+  en_AU = 'en_AU',
   /** Canadian English */
-  EnCa = 'en_CA',
+  en_CA = 'en_CA',
   /** British English */
-  EnGb = 'en_GB',
+  en_GB = 'en_GB',
   /** American English */
-  EnUs = 'en_US',
+  en_US = 'en_US',
   /** Esperanto */
-  Eo = 'eo',
+  eo = 'eo',
   /** Spanish */
-  Es = 'es',
+  es = 'es',
   /** European Spanish */
-  EsEs = 'es_ES',
+  es_ES = 'es_ES',
   /** Mexican Spanish */
-  EsMx = 'es_MX',
+  es_MX = 'es_MX',
   /** Estonian */
-  Et = 'et',
+  et = 'et',
   /** Basque */
-  Eu = 'eu',
+  eu = 'eu',
   /** Persian */
-  Fa = 'fa',
+  fa = 'fa',
   /** Dari */
-  FaAf = 'fa_AF',
+  fa_AF = 'fa_AF',
   /** Fulah */
-  Ff = 'ff',
+  ff = 'ff',
   /** Finnish */
-  Fi = 'fi',
+  fi = 'fi',
   /** Faroese */
-  Fo = 'fo',
+  fo = 'fo',
   /** French */
-  Fr = 'fr',
+  fr = 'fr',
   /** Canadian French */
-  FrCa = 'fr_CA',
+  fr_CA = 'fr_CA',
   /** Swiss French */
-  FrCh = 'fr_CH',
+  fr_CH = 'fr_CH',
   /** Western Frisian */
-  Fy = 'fy',
+  fy = 'fy',
   /** Irish */
-  Ga = 'ga',
+  ga = 'ga',
   /** Scottish Gaelic */
-  Gd = 'gd',
+  gd = 'gd',
   /** Galician */
-  Gl = 'gl',
+  gl = 'gl',
   /** Gujarati */
-  Gu = 'gu',
+  gu = 'gu',
   /** Manx */
-  Gv = 'gv',
+  gv = 'gv',
   /** Hausa */
-  Ha = 'ha',
+  ha = 'ha',
   /** Hebrew */
-  He = 'he',
+  he = 'he',
   /** Hindi */
-  Hi = 'hi',
+  hi = 'hi',
   /** Croatian */
-  Hr = 'hr',
+  hr = 'hr',
   /** Haitian Creole */
-  Ht = 'ht',
+  ht = 'ht',
   /** Hungarian */
-  Hu = 'hu',
+  hu = 'hu',
   /** Armenian */
-  Hy = 'hy',
+  hy = 'hy',
   /** Interlingua */
-  Ia = 'ia',
+  ia = 'ia',
   /** Indonesian */
-  Id = 'id',
+  id = 'id',
   /** Igbo */
-  Ig = 'ig',
+  ig = 'ig',
   /** Sichuan Yi */
-  Ii = 'ii',
+  ii = 'ii',
   /** Icelandic */
-  Is = 'is',
+  is = 'is',
   /** Italian */
-  It = 'it',
+  it = 'it',
   /** Japanese */
-  Ja = 'ja',
+  ja = 'ja',
   /** Javanese */
-  Jv = 'jv',
+  jv = 'jv',
   /** Georgian */
-  Ka = 'ka',
+  ka = 'ka',
   /** Kikuyu */
-  Ki = 'ki',
+  ki = 'ki',
   /** Kazakh */
-  Kk = 'kk',
+  kk = 'kk',
   /** Kalaallisut */
-  Kl = 'kl',
+  kl = 'kl',
   /** Khmer */
-  Km = 'km',
+  km = 'km',
   /** Kannada */
-  Kn = 'kn',
+  kn = 'kn',
   /** Korean */
-  Ko = 'ko',
+  ko = 'ko',
   /** Kashmiri */
-  Ks = 'ks',
+  ks = 'ks',
   /** Kurdish */
-  Ku = 'ku',
+  ku = 'ku',
   /** Cornish */
-  Kw = 'kw',
+  kw = 'kw',
   /** Kyrgyz */
-  Ky = 'ky',
+  ky = 'ky',
   /** Latin */
-  La = 'la',
+  la = 'la',
   /** Luxembourgish */
-  Lb = 'lb',
+  lb = 'lb',
   /** Ganda */
-  Lg = 'lg',
+  lg = 'lg',
   /** Lingala */
-  Ln = 'ln',
+  ln = 'ln',
   /** Lao */
-  Lo = 'lo',
+  lo = 'lo',
   /** Lithuanian */
-  Lt = 'lt',
+  lt = 'lt',
   /** Luba-Katanga */
-  Lu = 'lu',
+  lu = 'lu',
   /** Latvian */
-  Lv = 'lv',
+  lv = 'lv',
   /** Malagasy */
-  Mg = 'mg',
+  mg = 'mg',
   /** Maori */
-  Mi = 'mi',
+  mi = 'mi',
   /** Macedonian */
-  Mk = 'mk',
+  mk = 'mk',
   /** Malayalam */
-  Ml = 'ml',
+  ml = 'ml',
   /** Mongolian */
-  Mn = 'mn',
+  mn = 'mn',
   /** Marathi */
-  Mr = 'mr',
+  mr = 'mr',
   /** Malay */
-  Ms = 'ms',
+  ms = 'ms',
   /** Maltese */
-  Mt = 'mt',
+  mt = 'mt',
   /** Burmese */
-  My = 'my',
+  my = 'my',
   /** Norwegian Bokmål */
-  Nb = 'nb',
+  nb = 'nb',
   /** North Ndebele */
-  Nd = 'nd',
+  nd = 'nd',
   /** Nepali */
-  Ne = 'ne',
+  ne = 'ne',
   /** Dutch */
-  Nl = 'nl',
+  nl = 'nl',
   /** Flemish */
-  NlBe = 'nl_BE',
+  nl_BE = 'nl_BE',
   /** Norwegian Nynorsk */
-  Nn = 'nn',
+  nn = 'nn',
   /** Nyanja */
-  Ny = 'ny',
+  ny = 'ny',
   /** Oromo */
-  Om = 'om',
+  om = 'om',
   /** Odia */
-  Or = 'or',
+  or = 'or',
   /** Ossetic */
-  Os = 'os',
+  os = 'os',
   /** Punjabi */
-  Pa = 'pa',
+  pa = 'pa',
   /** Polish */
-  Pl = 'pl',
+  pl = 'pl',
   /** Pashto */
-  Ps = 'ps',
+  ps = 'ps',
   /** Portuguese */
-  Pt = 'pt',
+  pt = 'pt',
   /** Brazilian Portuguese */
-  PtBr = 'pt_BR',
+  pt_BR = 'pt_BR',
   /** European Portuguese */
-  PtPt = 'pt_PT',
+  pt_PT = 'pt_PT',
   /** Quechua */
-  Qu = 'qu',
+  qu = 'qu',
   /** Romansh */
-  Rm = 'rm',
+  rm = 'rm',
   /** Rundi */
-  Rn = 'rn',
+  rn = 'rn',
   /** Romanian */
-  Ro = 'ro',
+  ro = 'ro',
   /** Moldavian */
-  RoMd = 'ro_MD',
+  ro_MD = 'ro_MD',
   /** Russian */
-  Ru = 'ru',
+  ru = 'ru',
   /** Kinyarwanda */
-  Rw = 'rw',
+  rw = 'rw',
   /** Sanskrit */
-  Sa = 'sa',
+  sa = 'sa',
   /** Sindhi */
-  Sd = 'sd',
+  sd = 'sd',
   /** Northern Sami */
-  Se = 'se',
+  se = 'se',
   /** Sango */
-  Sg = 'sg',
+  sg = 'sg',
   /** Sinhala */
-  Si = 'si',
+  si = 'si',
   /** Slovak */
-  Sk = 'sk',
+  sk = 'sk',
   /** Slovenian */
-  Sl = 'sl',
+  sl = 'sl',
   /** Samoan */
-  Sm = 'sm',
+  sm = 'sm',
   /** Shona */
-  Sn = 'sn',
+  sn = 'sn',
   /** Somali */
-  So = 'so',
+  so = 'so',
   /** Albanian */
-  Sq = 'sq',
+  sq = 'sq',
   /** Serbian */
-  Sr = 'sr',
+  sr = 'sr',
   /** Southern Sotho */
-  St = 'st',
+  st = 'st',
   /** Sundanese */
-  Su = 'su',
+  su = 'su',
   /** Swedish */
-  Sv = 'sv',
+  sv = 'sv',
   /** Swahili */
-  Sw = 'sw',
+  sw = 'sw',
   /** Congo Swahili */
-  SwCd = 'sw_CD',
+  sw_CD = 'sw_CD',
   /** Tamil */
-  Ta = 'ta',
+  ta = 'ta',
   /** Telugu */
-  Te = 'te',
+  te = 'te',
   /** Tajik */
-  Tg = 'tg',
+  tg = 'tg',
   /** Thai */
-  Th = 'th',
+  th = 'th',
   /** Tigrinya */
-  Ti = 'ti',
+  ti = 'ti',
   /** Turkmen */
-  Tk = 'tk',
+  tk = 'tk',
   /** Tongan */
-  To = 'to',
+  to = 'to',
   /** Turkish */
-  Tr = 'tr',
+  tr = 'tr',
   /** Tatar */
-  Tt = 'tt',
+  tt = 'tt',
   /** Uyghur */
-  Ug = 'ug',
+  ug = 'ug',
   /** Ukrainian */
-  Uk = 'uk',
+  uk = 'uk',
   /** Urdu */
-  Ur = 'ur',
+  ur = 'ur',
   /** Uzbek */
-  Uz = 'uz',
+  uz = 'uz',
   /** Vietnamese */
-  Vi = 'vi',
+  vi = 'vi',
   /** Volapük */
-  Vo = 'vo',
+  vo = 'vo',
   /** Wolof */
-  Wo = 'wo',
+  wo = 'wo',
   /** Xhosa */
-  Xh = 'xh',
+  xh = 'xh',
   /** Yiddish */
-  Yi = 'yi',
+  yi = 'yi',
   /** Yoruba */
-  Yo = 'yo',
+  yo = 'yo',
   /** Chinese */
-  Zh = 'zh',
+  zh = 'zh',
   /** Simplified Chinese */
-  ZhHans = 'zh_Hans',
+  zh_Hans = 'zh_Hans',
   /** Traditional Chinese */
-  ZhHant = 'zh_Hant',
+  zh_Hant = 'zh_Hant',
   /** Zulu */
-  Zu = 'zu'
+  zu = 'zu'
 }
 
 /** Returned if attempting to set a Channel's defaultLanguageCode to a language which is not enabled in GlobalSettings */
@@ -2457,8 +2462,8 @@ export type LocalizedString = {
 };
 
 export enum LogicalOperator {
-  And = 'AND',
-  Or = 'OR'
+  AND = 'AND',
+  OR = 'OR'
 }
 
 export type ManualPaymentInput = {
@@ -5694,8 +5699,8 @@ export type SinglePrice = {
 };
 
 export enum SortOrder {
-  Asc = 'ASC',
-  Desc = 'DESC'
+  ASC = 'ASC',
+  DESC = 'DESC'
 }
 
 export type StockAdjustment = Node & StockMovement & {
@@ -5793,12 +5798,12 @@ export type StockMovementListOptions = {
 };
 
 export enum StockMovementType {
-  Adjustment = 'ADJUSTMENT',
-  Allocation = 'ALLOCATION',
-  Cancellation = 'CANCELLATION',
-  Release = 'RELEASE',
-  Return = 'RETURN',
-  Sale = 'SALE'
+  ADJUSTMENT = 'ADJUSTMENT',
+  ALLOCATION = 'ALLOCATION',
+  CANCELLATION = 'CANCELLATION',
+  RELEASE = 'RELEASE',
+  RETURN = 'RETURN',
+  SALE = 'SALE'
 }
 
 export type StringCustomFieldConfig = CustomField & {

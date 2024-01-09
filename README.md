@@ -140,22 +140,7 @@ We use [GraphQL Code Generator](https://the-guild.dev/graphql/codegen) to extrac
 By default, we create types in two places:
 
 -   `src/generated-types.ts`: admin-api types to use in your custom backend plugins.
--   `src/ui/generated-types.ts`: admin-api types to use in your custom UI plugins.
-
-If you want to extend the types, you can create files `*.graphql.ts` or `.gql.ts` where you define custom GraphQL types, queries, mutations wrapped by `graphql-tag`.
-
-```typescript
-import gql from 'graphql-tag';
-
-export const ExampleType = gql`
-	type Example implements Node {
-		id: ID!
-		createdAt: DateTime!
-		updatedAt: DateTime!
-		title: String!
-	}
-`;
-```
+-   `src/ui/gql`: admin-api types to use in your custom UI plugins generated with the `client` preset.<br>You can create files `*.graphql.ts` or `.gql.ts` where you define GraphQL queries or mutations wrapped by `graphql`, imported from `src/ui/gql/index.ts`.
 
 Feel free to modify GraphQL Code Generator configuration in `codegen.ts`.
 
